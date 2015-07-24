@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 2 Jun, 2015 4:36:59 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pojo.Journal" table="Journal" catalog="etaps1">
+        <id name="jkey" type="java.lang.Integer">
+            <column name="Jkey" />
+            <generator class="identity" />
+        </id>
+        <property name="jid" type="string">
+            <column name="Jid" length="300" not-null="true" />
+        </property>
+        <property name="jexpansion" type="string">
+            <column name="JExpansion" length="400" />
+        </property>
+        <property name="mailId" type="string">
+            <column name="MailId" length="300" />
+        </property>
+    </class>
+</hibernate-mapping>

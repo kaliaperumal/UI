@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 May, 2015 12:29:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pojo.Users" table="users" catalog="etaps1">
+        <id name="sno" type="java.lang.Integer">
+            <column name="sno" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="article" class="pojo.Article" fetch="select">
+            <column name="optarticleid" not-null="true" />
+        </many-to-one>
+        <property name="customer" type="string">
+            <column name="customer" length="30" />
+        </property>
+        <property name="jid" type="string">
+            <column name="jid" length="30" not-null="true" />
+        </property>
+        <property name="aid" type="string">
+            <column name="aid" length="30" not-null="true" />
+        </property>
+        <property name="password" type="string">
+            <column name="password" length="30" />
+        </property>
+        <property name="filepath" type="string">
+            <column name="filepath" length="150" not-null="true" />
+        </property>
+        <property name="pdfpath" type="string">
+            <column name="pdfpath" length="150" />
+        </property>
+        <property name="size" type="string">
+            <column name="size" length="20" />
+        </property>
+        <property name="opened" type="timestamp">
+            <column name="opened" length="19" />
+        </property>
+        <property name="modified" type="timestamp">
+            <column name="modified" length="19" />
+        </property>
+        <property name="status" type="string">
+            <column name="status" length="20" />
+        </property>
+        <property name="token" type="string">
+            <column name="token" length="60" not-null="true" />
+        </property>
+        <property name="uname" type="string">
+            <column name="uname" length="20" />
+        </property>
+        <property name="signIn" type="java.lang.Integer">
+            <column name="SignIn" />
+        </property>
+        <property name="ip" type="string">
+            <column name="ip" length="40" />
+        </property>
+        <property name="checkSaved" type="java.lang.Integer">
+            <column name="CheckSaved" />
+        </property>
+    </class>
+</hibernate-mapping>

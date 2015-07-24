@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 17 Jul, 2015 1:39:07 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pojo.Articlestage" table="articlestage" catalog="etaps1">
+        <id name="sno" type="java.lang.Integer">
+            <column name="sno" />
+            <generator class="identity" />
+        </id>
+        <property name="url" type="string">
+            <column name="url" length="20" not-null="true" />
+        </property>
+        <property name="value" type="string">
+            <column name="value" length="20" not-null="true" />
+        </property>
+    </class>
+</hibernate-mapping>

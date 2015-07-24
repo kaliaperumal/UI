@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 May, 2015 12:29:45 PM by Hibernate Tools 3.4.0.CR1 -->
+<hibernate-mapping>
+    <class name="pojo.Datasetstatus" table="datasetstatus" catalog="etaps1">
+        <id name="datasetStatusId" type="java.lang.Integer">
+            <column name="DatasetStatusID" />
+            <generator class="identity" />
+        </id>
+        <property name="supplierId" type="int">
+            <column name="SupplierID" not-null="true" />
+        </property>
+        <property name="datasetId" type="string">
+            <column name="DatasetID" length="25" not-null="true" />
+        </property>
+        <property name="journalId" type="string">
+            <column name="JournalID" length="30" not-null="true" />
+        </property>
+        <property name="articleId" type="string">
+            <column name="ArticleID" length="30" not-null="true" />
+        </property>
+        <property name="articleTitle" type="string">
+            <column name="ArticleTitle" length="800" />
+        </property>
+        <property name="status" type="string">
+            <column name="Status" length="27" not-null="true" />
+        </property>
+        <property name="metaXmlname" type="string">
+            <column name="MetaXMLName" length="30" not-null="true" />
+        </property>
+        <property name="downloadPickUpTime" type="timestamp">
+            <column name="DownloadPickUpTime" length="19" />
+        </property>
+        <property name="startDate" type="timestamp">
+            <column name="StartDate" length="19" />
+        </property>
+        <property name="endDate" type="timestamp">
+            <column name="EndDate" length="19" />
+        </property>
+        <set name="datasethistories" table="datasethistory" inverse="true" lazy="true" fetch="select">
+            <key>
+                <column name="DatasetStatusID" not-null="true" />
+            </key>
+            <one-to-many class="pojo.Datasethistory" />
+        </set>
+    </class>
+</hibernate-mapping>
